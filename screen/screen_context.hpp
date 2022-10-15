@@ -4,7 +4,7 @@
 #include <vector>
 #include <screen/screen.h>
 #include "color_log.hpp"
-namespace qnx_screen {
+namespace qnx_screen_camera {
     struct display_property {
         int id = 0 ;
         int size[2] = { 0 };

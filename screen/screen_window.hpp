@@ -4,7 +4,7 @@
 #include <vector>
 #include "screen_attribute.hpp"
 #include "screen_context.hpp"
-namespace qnx_screen {
+namespace qnx_screen_camera {
     struct window_buffer_attr {     // all buffers size is the same 
         int size[2] = { 0 };
         int num = 0;                // is same with qcarcam buffers
@@ -62,7 +62,7 @@ namespace qnx_screen {
         std::vector<window_buffer_handle>handles;
         int buffer_size[2] = { 0 };
     };
-    class screen_window {
+    class screen_window  : public std::enable_shared_from_this<screen_window> {
     public:
         screen_window(std::shared_ptr<screen_context> ptr) : screen_ctx_(ptr) {
         }
@@ -297,6 +297,9 @@ namespace qnx_screen {
                 screen_destroy_window(win_ctx_);
                 win_ctx_ = nullptr;
             }
+        }
+        std::shared_ptr<screen_window> get_window_ptr() {
+            return shared_from_this();
         }
     private:
         int format_ = -1;

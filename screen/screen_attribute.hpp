@@ -1,6 +1,6 @@
 #pragma once
 #include <screen/screen.h>
-namespace qnx_screen {
+namespace qnx_screen_camera {
     template <typename T>
     struct vect {
         T x;
