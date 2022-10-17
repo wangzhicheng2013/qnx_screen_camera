@@ -62,7 +62,7 @@ namespace qnx_screen_camera {
         std::vector<window_buffer_handle>handles;
         int buffer_size[2] = { 0 };
     };
-    class screen_window  : public std::enable_shared_from_this<screen_window> {
+    class screen_window : public std::enable_shared_from_this<screen_window> {
     public:
         screen_window(std::shared_ptr<screen_context> ptr) : screen_ctx_(ptr) {
         }
