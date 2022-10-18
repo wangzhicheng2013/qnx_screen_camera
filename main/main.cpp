@@ -11,6 +11,9 @@ int main() {
 
    capture_attr cAttr;
    cAttr.input_id = QCARCAM_INPUT_TYPE_TOF_DEPTH;
+   if (false == G_CAMERA_MANAGER.init()) {
+      return -1;
+   }
    qcarcam_hndl_t handle = G_CAMERA_MANAGER.create_camera_connect(sAttr, cAttr);
    G_CAMERA_MANAGER.start_capture(handle);
    while (true) {
